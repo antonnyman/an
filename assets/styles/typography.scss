@@ -1,0 +1,145 @@
+h1, h2, h3, h4, h5, h6 {
+    color: inherit;
+    font-family: $header-font-family;
+    line-height: 1.4rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 5.5rem;
+}
+
+h2 {
+    font-size: 4rem;
+    line-height: 4.4rem;
+}
+
+h3 {
+    font-size: 3rem;
+    line-height: 3.3rem;
+}
+
+h4 {
+    font-size: 2.4rem;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+h6 {
+    font-size: 1.6rem;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: $base-font-family;
+}
+
+blockquote {
+    border-left: .2rem solid #ddd;
+    margin-left: 0;
+    padding: 1rem 2rem;
+
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    cite {
+        color: lighten($body-font-color, 50%);
+    }
+}
+
+ul, ol {
+    margin: 2rem 0 2rem 2rem;
+    padding: 0;
+
+    ul, ol {
+        margin: 1.5rem 0 1.5rem 2rem;
+    }
+
+    li {
+        margin-top: 1rem;
+    }
+}
+
+ul {
+    list-style: disc inside;
+
+    ul {
+        list-style-type: circle;
+    }
+}
+
+ol {
+    list-style: decimal inside;
+
+    ol {
+        list-style-type: lower-alpha;
+    }
+}
+
+dl {
+    dt {
+        font-weight: bold;
+    }
+
+    dd {
+        margin: .5rem 0 1.5rem 0;
+    }
+}
+
+mark {
+    background: lighten($control-color-warning, 24%);
+    @include label-base();
+}
+
+kbd {
+    font-family: 'Source Code Pro', Consolas, Menlo, monospace;;
+    background: $black;
+    color: $white;
+    @include label-base();
+}
+
+abbr[title] {
+    border-bottom: .1rem dotted;
+    cursor: help;
+    text-decoration: none;
+}
+
+ins, u {
+    border-bottom: .1rem solid;
+    text-decoration: none;
+}
+
+pre {
+    font-family: 'Source Code Pro', Consolas, Menlo, monospace;
+    background: lighten($gray_5, 8%);
+    line-height: 1.8rem;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    overflow: auto;
+    padding: 1.5rem;
+}
+
+code {
+    font-family: 'Source Code Pro', Consolas, Menlo, monospace;;
+    background: $core-border-color;
+    color: lighten($body-font-color, 20%);
+    @include label-base();
+    white-space: nowrap;
+
+    pre & {
+        background: transparent;
+        border-left: 0;
+        line-height: 1.8rem;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}

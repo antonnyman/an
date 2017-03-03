@@ -1,0 +1,93 @@
+
+// Global
+
+$base-font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto;
+$base-fallback-font-family: "Helvetica Neue", sans-serif;
+$body-bg: #fafafa;
+$body-font-color: $black;
+$body-font-size: 1.4rem;
+$body-font-family: $base-font-family, $base-fallback-font-family;
+
+$header-font-family: $base-font-family;
+$header-fallback-family: $body-font-family;
+
+$html-font-size: 10px;
+$html-line-height: 1.42857;
+
+
+
+// Sizes
+$layout-gutter: 1rem;
+$control-min-width: 18rem;
+$border-radius: .2rem;
+
+// Colors
+$core-color: $blue;
+$core-secondary-color: $blue_5;
+$core-color-lighter: $blue_3;
+$core-color-darker: $blue_0;
+
+$core-link-color: $blue_1;
+$core-border-color: $gray;
+$core-meta-color: $gray_3;
+
+$control-color: $gray_4;
+$control-color-success: $green;
+$control-color-info: $purple;
+$control-color-warning: $orange;
+$control-color-danger: $red;
+$control-color-style: $pink;
+
+$form-input-font-size: 1.4rem;
+$form-input-height: 3.2rem;
+$form-input-line-height: 1.8rem;
+
+// Responsive breakpoints
+$size-xs: 480px;
+$size-sm: 600px;
+$size-md: 840px;
+$size-lg: 960px;
+$size-xl: 1280px;
+
+.clearfix {
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+@mixin control-shadow() {
+    box-shadow: 0 0 .1rem fade-in($core-color, 0.25);
+}
+
+@mixin control-transition() {
+    transition: all .15s ease;
+}
+
+@mixin toast-variant($color) {
+    background: fade-in($color, .9);
+    border-color: $color;
+}
+
+@mixin card-variant($c, $b) {
+    background: fade-in($c, .9);
+    border-color: $b;
+}
+
+@mixin label-base() {
+    border-radius: .2rem;
+    font-size: .95em;
+    padding: .1em .3em;
+    vertical-align: baseline;
+}
+
+@mixin label-variant($color) {
+    background: $color;
+    color: $core-color-lighter;
+}
+
+@mixin card-variant($color) {
+    background: fade-in($color, .9);
+    border-color: $color;
+}

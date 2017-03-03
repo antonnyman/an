@@ -1,0 +1,220 @@
+.breadcrumb,
+.tab,
+.pagination,
+.nav,
+.bottom-nav {
+    list-style: none;
+    margin: .5rem 0;
+}
+
+.breadcrumb {
+    padding: 1.2rem;
+
+    .breadcrumb-item {
+        display: inline-block;
+        margin: 0;
+
+        a {
+            text-decoration: none;
+        }
+
+        &:last-child {
+            &,
+            a {
+                color: $body-font-color;
+            }
+        }
+
+        &:not(:last-child) {
+            &::after {
+                color: $control-color;
+                content: "/";
+                padding: 0 .4rem;
+            }
+        }
+    }
+}
+
+.tab {
+    border-bottom: .1rem solid $core-border-color;
+    display: flex;
+    flex-wrap: wrap;
+
+    .tab-item {
+        margin-top: 0;
+
+        a {
+            text-decoration: none;
+            border-bottom: .2rem solid transparent;
+            color: $body-font-color;
+            display: block;
+            margin-bottom: -.1rem;
+            margin-top: 0;
+            padding: .8rem 1.5rem;
+
+            &:focus,
+            &:hover {
+                color: $core-link-color;
+            }
+        }
+
+        &.active a,
+        a.active {
+            border-bottom-color: $core-color;
+            color: $core-link-color;
+        }
+
+        .badge {
+            &[data-badge]::after {
+                position: absolute;
+                left: 0;
+                top: 1rem;
+                transform: translate(-50%, -1rem);
+            }
+        }
+    }
+
+    &.active a,
+    a.active {
+        border-bottom-color: $core-color;
+        color: $core-link-color;
+    }
+
+    &.tab-block {
+        .tab-item {
+            flex: 1 0 auto;
+            text-align: center;
+        }
+
+        .badge {
+
+            &[data-badge]::after {
+                position: relative;
+                transform: translate(-50%, -1rem);
+                float: right;
+            }
+        }
+    }
+}
+
+.nav-clear {
+    display: none;
+}
+
+.show-xs {
+    display: none !important;
+}
+
+@media screen and (min-width: $size-xs + 1px) {
+    .sidebar {
+        padding: 6rem 0;
+
+        .nav {
+            position: relative;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+
+    .nav-item {
+        a {
+            color: lighten($body-font-color, 20%);
+            padding: .6rem .8rem;
+            text-decoration: none;
+            &:focus,
+            &:hover {
+                color: $core-color;
+            }
+        }
+
+        &.active {
+            & > a {
+                color: $body-font-color;
+                &:focus,
+                &:hover {
+                    color: $core-color;
+                }
+            }
+        }
+    }
+
+    & .nav {
+        margin-bottom: 1rem;
+        margin-left: 2rem;
+
+        a {
+            color: lighten($body-font-color, 30%);
+        }
+    }
+}
+
+@media screen and (max-width: $size-xs) {
+    .sidebar {
+        position: fixed;
+        right: 0;
+        top: 0;
+        background: $white;
+        height: 100%;
+        overflow-y: auto;
+        padding-left: 3rem;
+        transform: translateX(100%);
+        transition: transform .2s ease;
+        width: 24rem;
+        z-index: 999;
+
+        &:target {
+            transform: translateX(0);
+
+            & + .nav-clear {
+                display: block;
+            }
+        }
+    }
+
+    .content {
+
+    }
+}
+
+.bottom-nav {
+  border-top: .1rem solid $core-border-color;
+  display: flex;
+  flex-wrap: wrap;
+
+
+  .bottom-nav-item {
+    margin-top: 0;
+    flex: 1 0 auto;
+    text-align: center;
+
+    a {
+      display: block;
+      text-decoration: none;
+      border-top: .2rem solid transparent;
+      margin-top: -.1rem;
+      color: $core-link-color;
+      padding: .9rem .5rem;
+
+      [class^="icon-"]:before, [class*=" icon-"]:before {
+        font-size: 2rem;
+      }
+    }
+
+    &:focus,
+    &:hover {
+      background: $core-border-color;
+    }
+
+    &.active a,
+    a.active {
+      border-top-color: $core-color;
+      color: darken($core-link-color, 5%);
+    }
+  }
+}
+
+
+

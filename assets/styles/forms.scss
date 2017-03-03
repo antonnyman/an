@@ -1,0 +1,471 @@
+.form-group:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+// Element: Input
+.form-input {
+    appearance: none;
+    background: $white;
+    background-image: none;
+    border: .1rem solid $control-color;
+    border-radius: $border-radius;
+    color: $body-font-color;
+    display: block;
+    font-size: $form-input-font-size;
+    height: $form-input-height;
+    line-height: $form-input-line-height;
+    width: 100%;
+    max-width: 100%;
+    outline: 0;
+    padding: .6rem .8rem;
+    position: relative;
+
+    @include control-transition();
+
+    &:focus {
+        border-color: $core-color;
+        @include control-shadow();
+    }
+
+    &[disabled] {
+        background: $gray_5;
+    }
+
+
+
+    &.input-sm {
+        font-size: 1.2rem;
+        height: 2.4rem;
+        padding: .3rem .6rem;
+    }
+
+    &.input-lg {
+        font-size: 1.6rem;
+        height: 4.2rem;
+        line-height: 2rem;
+        padding: 1rem .8rem;
+    }
+
+    &.input-inline {
+        display: inline-block;
+        vertical-align: middle;
+        width: auto;
+    }
+
+    // Element: Textarea
+    &.textarea {
+        height: auto;
+        line-height: 2rem;
+    }
+
+    .has-success &,
+    &.is-success {
+        border-color: $control-color-success;
+    }
+
+    .has-danger &,
+    &.is-danger {
+        border-color: $control-color-danger;
+    }
+
+    .has-warning &,
+    &.is-warning {
+        border-color: $control-color-warning;
+    }
+
+    .has-info &,
+    &.is-info {
+        border-color: $control-color-info;
+    }
+
+    .has-style &,
+    &.is-style {
+        border-color: $control-color-style;
+    }
+
+    &[type=file] {
+        height: auto;
+
+      &.file-loading {
+        color: transparent !important;
+        min-height: 1.6rem;
+        pointer-events: none;
+        position: relative;
+        &::after {
+            animation: loading .6s infinite linear;
+            border: .2rem solid $core-color;
+            border-radius: .8rem;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            content: "";
+            display: block;
+            height: 1.6rem;
+            width: 1.6rem;
+            right: 5%;
+            top: 50%;
+            margin-left: -1.8rem;
+            margin-top: -.8rem;
+            position: absolute;
+        }
+      }
+    }
+}
+
+.form-input-hint {
+    color: $core-meta-color;
+    margin-top: .4rem;
+
+    .has-success &,
+    .is-success + & {
+        color: $control-color-success;
+    }
+
+    .has-danger &,
+    .is-danger + & {
+        color: $control-color-danger;
+    }
+
+    .has-warning &,
+    .is-warning + & {
+        color: darken($control-color-warning, 18%);
+    }
+
+    .has-info &,
+    .is-info + & {
+        color: $control-color-info;
+    }
+    .has-style &,
+    .is-style + & {
+        color: $control-color-style;
+    }
+}
+
+// Element: Label
+.form-label {
+    display: block;
+    line-height: 1.6rem;
+    margin-bottom: .5rem;
+}
+
+
+// Element: Select
+.form-select {
+    appearance: none;
+    border: .1rem solid $control-color;
+    border-radius: $border-radius;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    min-width: $control-min-width;
+    outline: 0;
+    padding: .5rem .8rem;
+    vertical-align: middle;
+
+    &[multiple] {
+        option {
+            padding: .2rem .4rem;
+        }
+    }
+
+    &:not([multiple]) {
+        background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAMAAACzvE1FAAAADFBMVEUzMzMzMzMzMzMzMzMKAG/3AAAAA3RSTlMAf4C/aSLHAAAAPElEQVR42q3NMQ4AIAgEQTn//2cLdRKppSGzBYwzVXvznNWs8C58CiussPJj8h6NwgorrKRdTvuV9v16Afn0AYFOB7aYAAAAAElFTkSuQmCC) no-repeat right .75rem center / .8rem 1rem;
+        height: 3.2rem;
+        padding-right: 2.4rem;
+    }
+
+    &:focus {
+        border-color: $core-color;
+        @include control-shadow();
+    }
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &.select-sm {
+        font-size: 1.2rem;
+        height: 2.4rem;
+        padding: .4rem 2rem .4rem .6rem;
+    }
+
+    &.select-lg {
+        font-size: 1.6rem;
+        height: 4.2rem;
+        line-height: 2rem;
+        padding: 1rem 2.4rem 1rem .8rem;
+    }
+
+    .has-success &,
+    &.is-success {
+        border-color: $control-color-success;
+    }
+
+    .has-danger &,
+    &.is-danger {
+        border-color: $control-color-danger;
+    }
+}
+
+
+// Reset checkbox, radio and switch controls
+.form-checkbox,
+.form-radio,
+.form-switch {
+    input {
+        clip: rect(0, 0, 0, 0);
+        height: .1rem;
+        width: .1rem;
+        margin: -.1rem;
+        overflow: hidden;
+        position: absolute;
+
+        &:focus + .form-icon {
+            border-color: $core-color;
+            @include control-shadow();
+        }
+    }
+}
+
+.form-checkbox,
+.form-radio {
+    cursor: pointer;
+    display: inline-block;
+    line-height: 1.8rem;
+    padding: .3rem 2rem;
+    position: relative;
+
+    .form-icon {
+        border: .1rem solid $control-color;
+        @include control-transition();
+        display: inline-block;
+        font-size: 1.4rem;
+        height: 1.4rem;
+        position: absolute;
+        left: 0;
+        top: .5rem;
+        line-height: 2.4rem;
+        outline: 0;
+        padding: 0;
+        vertical-align: top;
+        width: 1.4rem;
+    }
+
+    &:hover .form-icon {
+        border-color: darken($control-color, 20%);
+    }
+
+    input {
+        &:checked + .form-icon {
+            background: $core-color;
+            border-color: $core-color;
+        }
+
+        &:active + .form-icon {
+            background: $core-border-color;
+        }
+    }
+
+    .has-success &,
+    &.is-success {
+      .form-icon {
+        border-color: $control-color-success;
+      }
+
+    }
+
+    .has-danger &,
+    &.is-danger {
+        .form-icon {
+          border-color: $control-color-danger;
+        }
+    }
+
+    .has-warning &,
+    &.is-warning {
+        .form-icon {
+          border-color: $control-color-warning;
+        }
+    }
+
+    .has-info &,
+    &.is-info {
+        .form-icon {
+          border-color: $control-color-info;
+        }
+    }
+
+    .has-style &,
+    &.is-style {
+        .form-icon {
+          border-color: $control-color-style;
+        }
+    }
+}
+
+.form-checkbox {
+    .form-icon {
+        border-radius: $border-radius;
+    }
+
+    input {
+        &:checked + .form-icon {
+            &::after {
+                background-clip: padding-box;
+                border: .2rem solid $white;
+                border-left-width: 0;
+                border-top-width: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: .6rem;
+                height: 1rem;
+                margin-left: -.3rem;
+                margin-top: -.6rem;
+                transform: rotate(45deg);
+                content: "";
+            }
+        }
+
+        &:indeterminate + .form-icon {
+            background: $core-color;
+            border-color: $core-color;
+
+            &::after {
+                background: $white;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin-left: -.4rem;
+                margin-top: -.1rem;
+                width: .8rem;
+                height: .2rem;
+                content: "";
+            }
+        }
+    }
+}
+
+.form-radio {
+    .form-icon {
+        border-radius: .7rem;
+    }
+
+    input:checked + .form-icon {
+        &::after {
+            background: $white;
+            border-radius: .2rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -.2rem;
+            margin-top: -.2rem;
+            width: .4rem;
+            height: .4rem;
+            content: "";
+        }
+    }
+}
+
+.form-switch {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    line-height: 2rem;
+    padding: .3rem 2rem .3rem 3.6rem;
+
+    .form-icon {
+        background: $control-color;
+        background-clip: padding-box;
+        border: .1rem solid $control-color;
+        position: absolute;
+        left: 0;
+        top: .4rem;
+        width: 3rem;
+        height: 1.8rem;
+        display: inline-block;
+        border-radius: .9rem;
+        vertical-align: top;
+        line-height: 2.6rem;
+        outline: 0;
+        padding: 0;
+
+        &::after {
+            background: $white;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            border-radius: .8rem;
+            content: "";
+            height: 1.6rem;
+            width: 1.6rem;
+            transition: left .20s ease-out;
+        }
+    }
+
+    input {
+        &:checked + .form-icon {
+            background: $core-color;
+            border-color: $core-color;
+
+            &::after {
+                left: 1.2rem;
+            }
+        }
+    }
+}
+
+.input-group {
+    display: flex;
+
+    .input-group-addon {
+        background: lighten($core-border-color, 8%);
+        border: .1rem solid $control-color;
+        border-radius: $border-radius;
+        line-height: 1.6rem;
+        padding: .7rem .8rem;
+
+        &.addon-sm {
+            font-size: 1.2rem;
+            padding: .3rem .6rem;
+        }
+
+        &.addon-lg {
+            font-size: 1.6rem;
+            line-height: 2rem;
+            padding: 1rem .8rem;
+        }
+    }
+
+    .input-group-addon,
+    .input-group-button {
+        flex: 1 0 auto;
+    }
+
+    .form-input,
+    .input-group-addon,
+    .input-group-button {
+        &:first-child:not(:last-child) {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        &:not(:first-child):not(::last-child) {
+            border-radius: 0;
+            margin-left: -.1rem;
+        }
+
+        &:last-child:not(:first-child) {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            margin-left: -.1rem;
+        }
+
+        &:focus {
+            z-index: 99;
+        }
+    }
+
+    &.input-inline {
+        display: inline-flex;
+    }
+}

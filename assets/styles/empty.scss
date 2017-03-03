@@ -1,0 +1,19 @@
+.empty {
+  background: $gray_5;
+  border-radius: $border-radius;
+  text-align: center;
+  padding: 3 * $layout-gutter;
+
+  .empty-title {
+    font-size: 1.8rem;
+    margin: 1.5rem 0 .5rem 0;
+  }
+
+  .empty-meta {
+    color: $core-meta-color;
+  }
+
+  .empty-action {
+    margin-top: 1.5rem;
+  }
+}

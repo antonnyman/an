@@ -1,0 +1,36 @@
+.form-autocomplete {
+  position: relative;
+
+  .form-autocomplete-input {
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    background: $white;
+    border: .1rem solid $control-color;
+    border-radius: $border-radius;
+    color: $body-font-color;
+    min-height: 3.6rem;
+    outline: 0;
+    padding: .1rem 0 .1rem .2rem;
+    width: 100%;
+
+    &.is-focused {
+      border-color: $core-color;
+      @include control-shadow();
+    }
+
+    .form-input {
+      display: inline-block;
+      flex: 1 0 auto;
+      box-shadow: none;
+      padding: .3rem;
+      width: auto;
+      border-color: transparent;
+    }
+  }
+
+  mark {
+    font-size: 1;
+    padding: .1em 0;
+  }
+}

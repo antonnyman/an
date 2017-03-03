@@ -1,0 +1,213 @@
+.card {
+    @include card-variant($white);
+    border: .1rem solid $core-border-color;
+    border-radius: $border-radius;
+    display: block;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+
+    &.card-primary {
+        @include card-variant($core-color);
+        color: $white;
+
+        .card-title {
+            color: $white;
+        }
+
+        .card-subtitle {
+            color: $white;
+        }
+
+        .button {
+            border-color: $white;
+            background: $core-color;
+            color: $white;
+
+            &:hover {
+                background: $white;
+                border-color: $white;
+                color: $core-color;
+            }
+
+            &:active,
+            &.active {
+                background: darken($white, 5%);
+                border-color: darken($white, 10%);
+                color: $core-color;
+            }
+        }
+    }
+
+    &.card-success {
+        @include card-variant($control-color-success);
+        color: $white;
+
+        .card-title {
+            color: $white;
+        }
+
+        .card-subtitle {
+            color: $white;
+        }
+
+        .button {
+            border-color: $white;
+            background: $control-color-success;
+            color: $white;
+
+            &:hover {
+                background: $white;
+                border-color: $white;
+                color: $control-color-success;
+            }
+
+            &:active,
+            &.active {
+                background: darken($white, 5%);
+                border-color: darken($white, 10%);
+                color: $control-color-success;
+            }
+        }
+    }
+
+    &.card-warning {
+        @include card-variant($control-color-warning);
+        color: $black;
+
+        .card-title {
+            color: $black;
+        }
+
+        .card-subtitle {
+            color: lighten($black, 2%);
+        }
+
+        .button {
+            border-color: $black;
+            background: $control-color-warning;
+            color: $black;
+
+            &:hover {
+                background: $white;
+                border-color: $black;
+                color: $black;
+            }
+
+            &:active,
+            &.active {
+                background: darken($white, 5%);
+                border-color: darken($white, 10%);
+                color: $control-color-warning;
+            }
+        }
+    }
+
+
+    &.card-info {
+        @include card-variant($core-color-darker);
+        color: $white;
+
+        .card-title {
+            color: $white;
+        }
+
+        .card-subtitle {
+            color: $white;
+        }
+
+        .button {
+            border-color: $white;
+            background: $core-color-darker;
+            color: $white;
+
+            &:hover {
+                background: $white;
+                border-color: $white;
+                color: $core-color-darker;
+            }
+
+            &:active,
+            &.active {
+                background: darken($white, 5%);
+                border-color: darken($white, 10%);
+                color: $core-color-darker;
+            }
+        }
+    }
+
+
+    &.card-danger {
+        @include card-variant($control-color-danger);
+        color: $white;
+
+        .card-title {
+            color: $white;
+        }
+
+        .card-subtitle {
+            color: $white;
+        }
+
+        .button {
+            border-color: $white;
+            background: $control-color-danger;
+            color: $white;
+
+            &:hover {
+                background: $white;
+                border-color: $white;
+                color: $control-color-danger;
+            }
+
+            &:active,
+            &.active {
+                background: darken($white, 5%);
+                border-color: darken($white, 10%);
+                color: $control-color-danger;
+            }
+        }
+    }
+    .card-header,
+    .card-body,
+    .card-footer {
+        padding: 1.5rem 1.5rem 0 1.5rem;
+
+        &:last-child {
+            padding-bottom: 1.5rem;
+        }
+    }
+
+    .card-image {
+        padding-top: 1.5rem;
+
+        &:first-child {
+            padding-top: 0;
+
+            img {
+                border-top-left-radius: $border-radius;
+                border-top-right-radius: $border-radius;
+            }
+        }
+
+        &:last-child {
+            img {
+                border-bottom-left-radius: $border-radius;
+                border-bottom-right-radius: $border-radius;
+            }
+        }
+    }
+
+    .card-title {
+        font-family: $header-font-family;
+        font-size: 1.7em;
+        line-height: 2.4rem;
+        margin: 0.5rem 0;
+    }
+
+    .card-subtitle {
+        color: lighten($body-font-color, 50%);
+        font-size: 1em;
+        margin: 0;
+    }
+}

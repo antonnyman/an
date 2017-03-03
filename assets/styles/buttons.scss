@@ -1,0 +1,341 @@
+.button {
+    -webkit-appearance: none;
+    background: $white;
+    font-family: $body-font-family;
+    border: .1rem solid $core-color;
+    border-radius: $border-radius;
+    color: $core-color;
+
+    @include control-transition();
+
+    cursor: pointer;
+    display: inline-block;
+    outline: 0;
+    font-size: 1.4rem;
+    height: 3.2rem;
+    line-height: 1.6rem;
+    padding: .7rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:focus {
+        background: lighten($core-secondary-color, 2%);
+        //@include control-shadow();
+    }
+
+    &:hover {
+        background: $core-color;
+        border-color: darken($core-color, 5%);
+        color: $white;
+    }
+
+    &:active,
+    &.active {
+        background: darken($core-color, 5%);
+        border-color: darken($core-color, 10%);
+        color: $white;
+    }
+
+    // Primary .button
+    &.button-primary {
+        background: $core-color;
+        border-color: darken($core-color, 5%);
+        color: $white;
+
+        &:focus {
+            background: darken($core-color, 3%);
+            border-color: darken($core-color, 10%);
+            color: $white;
+        }
+
+        &:hover {
+            background: darken($core-color, 4%);
+            border-color: darken($core-color, 15%);
+            color: $white;
+        }
+
+        &:active,
+        &.active {
+            background: darken($core-color, 8%);
+            border-color: darken($core-color, 15%);
+            color: $white;
+        }
+
+        &.loading {
+            &::after {
+                border-color: $white;
+                border-right-color: transparent;
+                border-top-color: transparent;
+            }
+        }
+
+        &.danger {
+          background: $red;
+          color: $white;
+          border-color: darken($red, 5%);
+
+            &:focus {
+                background: darken($red, 3%);
+                border-color: darken($red, 10%);
+                color: $white;
+            }
+
+            &:hover {
+                background: darken($red, 4%);
+                border-color: darken($red, 15%);
+                color: $white;
+            }
+
+            &:active,
+            &.active {
+                background: darken($red, 8%);
+                border-color: darken($red, 15%);
+                color: $white;
+            }
+
+            &.loading {
+                &::after {
+                    border-color: $white;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                }
+            }
+        }
+
+        &.success {
+          background: $green;
+          color: $white;
+          border-color: darken($green, 5%);
+
+            &:focus {
+                background: darken($green, 3%);
+                border-color: darken($red, 10%);
+                color: $white;
+            }
+
+            &:hover {
+                background: darken($green, 4%);
+                border-color: darken($green, 15%);
+                color: $white;
+            }
+
+            &:active,
+            &.active {
+                background: darken($green, 8%);
+                border-color: darken($green, 15%);
+                color: $white;
+            }
+
+            &.loading {
+                &::after {
+                    border-color: $white;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                }
+            }
+        }
+
+        &.warning {
+          background: $orange;
+          color: $black;
+          border-color: darken($orange, 5%);
+
+            &:focus {
+                background: darken($orange, 3%);
+                border-color: darken($orange, 10%);
+                color: $black;
+            }
+
+            &:hover {
+                background: darken($orange, 4%);
+                border-color: darken($green, 15%);
+                color: $black;
+            }
+
+            &:active,
+            &.active {
+                background: darken($orange, 8%);
+                border-color: darken($green, 15%);
+                color: $black;
+            }
+
+            &.loading {
+                &::after {
+                    border-color: $black;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                }
+            }
+        }
+
+        &.info {
+          background: $purple;
+          color: $white;
+          border-color: darken($purple, 5%);
+
+            &:focus {
+                background: darken($purple, 3%);
+                border-color: darken($purple, 10%);
+                color: $white;
+            }
+
+            &:hover {
+                background: darken($purple, 4%);
+                border-color: darken($purple, 15%);
+                color: $white;
+            }
+
+            &:active,
+            &.active {
+                background: darken($purple, 8%);
+                border-color: darken($purple, 15%);
+                color: $white;
+            }
+
+            &.loading {
+                &::after {
+                    border-color: $white;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                }
+            }
+        }
+
+        &.style {
+          background: $pink;
+          color: $white;
+          border-color: darken($pink, 5%);
+
+            &:focus {
+                background: darken($pink, 3%);
+                border-color: darken($pink, 10%);
+                color: $white;
+            }
+
+            &:hover {
+                background: darken($pink, 4%);
+                border-color: darken($pink, 15%);
+                color: $white;
+            }
+
+            &:active,
+            &.active {
+                background: darken($pink, 8%);
+                border-color: darken($pink, 15%);
+                color: $white;
+            }
+
+            &.loading {
+                &::after {
+                    border-color: $white;
+                    border-right-color: transparent;
+                    border-top-color: transparent;
+                }
+            }
+        }
+    }
+
+    &.button-link {
+        background: transparent;
+        border-color: transparent;
+        color: $core-color;
+
+        &:focus,
+        &:hover {
+            color: darken($core-color, 15%);
+        }
+
+        &:active,
+        &.active {
+            color: darken($core-color, 25%);
+        }
+    }
+
+    &.button-small {
+        font-size: 1.2rem;
+        height: 2.4rem;
+        font-weight: 300;
+        line-height: 1.1rem;
+    }
+
+    &.button-large {
+        font-size: 1.8rem;
+        height: 4.2rem;
+        line-height: 2rem;
+        padding: 1rem 1.5rem;
+    }
+
+    &.button-block {
+        display: block;
+        width: 100%;
+    }
+
+    &.button-clear {
+        background: transparent;
+        border: 0;
+        color: currentColor;
+        font-family: $body-font-family;
+        height: 2rem;
+        line-height: 1.8rem;
+        margin-left: .2rem;
+        margin-right: -.4rem;
+        opacity: .45;
+        padding: 0 .4rem;
+        text-decoration: none;
+        width: 2rem;
+
+        &:hover {
+            opacity: .85;
+        }
+
+        &::before {
+            content: "\00d7";
+            font-size: 2rem;
+        }
+    }
+
+    i {
+      font-size: 0.6rem;
+      color: $core-link-color;
+    }
+
+}
+
+.button-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    .button {
+        flex: 1 0 auto;
+
+        &:first-of-type:not(:last-of-type) {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        &:not(:first-of-type):not(:last-of-type) {
+            border-radius: 0;
+            margin-left: -.1rem;
+        }
+
+        &:last-of-type:not(:first-of-type) {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            margin-left: -.1rem;
+        }
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            z-index: 9;
+        }
+    }
+
+    &.btn-group-block {
+        display:flex;
+    }
+}
