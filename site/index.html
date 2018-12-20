@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+
+    <title>Anton Nyman</title>
+
+    <meta
+      name="description"
+      content="Anton Nyman, javascript developer and UX designer."
+    />
+    <meta property="og:url" content="https://antonnyman.se" />
+    <meta property="og:title" content="Anton Nyman" />
+    <meta
+      name="og:description"
+      content="Anton Nyman, javascript developer and UX designer."
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="@antonnyman" />
+    <meta name="twitter:title" content="Anton Nyman" />
+    <meta
+      name="twitter:description"
+      content="Anton Nyman, javascript developer and UX designer."
+    />
+
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      @font-face {
+        font-family: 'Inter';
+        src: url('./static/Inter-UI-Medium.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Inter';
+        src: url('./static/Inter-UI-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font: 14px 'Inter UI', system-ui, sans-serif;
+        line-height: 1.5;
+        font-weight: 400;
+        color: #111;
+        width: 100%;
+        max-width: 720px;
+        margin: 0 auto;
+      }
+
+      p,
+      ul,
+      ol,
+      pre,
+      blockquote,
+      hr,
+      object {
+        margin: 1em 0;
+      }
+
+      a {
+        color: rgba(3, 102, 214, 1);
+        text-decoration: none;
+      }
+      a:visited {
+        color: rgba(3, 102, 214, 1);
+      }
+
+      header {
+        display: flex;
+        padding: 0 32px;
+        height: 90px;
+        justify-content: space-between;
+      }
+
+      .logo-wrap {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .logo {
+        display: block;
+        width: 66px;
+      }
+      .content {
+        padding: 0 32px;
+      }
+      .intro {
+        display: flex;
+        justify-content: space-between;
+      }
+      .me {
+        padding-top: 2rem;
+        width: 150px;
+      }
+      .projects {
+        margin-top: 8rem;
+      }
+      .project-grid {
+        display: grid;
+        row-gap: 4rem;
+        padding: 4rem 0;
+        grid-template-columns: 1fr 2fr;
+      }
+      .midas-wrapper {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .mp-wrapper {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .cl-wrapper {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .project-image {
+        max-width: 300px;
+        padding: 0 1rem;
+      }
+      @media screen and (max-width: 600px) {
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+        .project-image {
+          max-width: 400px;
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo-wrap"><img src="./static/logo.svg" class="logo" /></div>
+      <ul class="nav"></ul>
+    </header>
+    <div class="content">
+      <div class="intro">
+        <div>
+          <p>Hi, I'm Anton Nyman.</p>
+          <p>
+            I'm a javascript developer from Malmö, Sweden with a background in
+            UX design.
+          </p>
+          <p>
+            I work for
+            <a href="https://www.mdinternational.se/en/">Docly</a> (Min Doktor)
+            where we create accessible digital healthcare. Previously I've
+            worked for <a href="http://resurs.se">Resurs Bank</a> and Sony
+            Creative Center.
+          </p>
+          <div class="contact">
+            <p>
+              Get in touch<br />
+              anton@antonnyman.se <br /><a
+                href="http://www.linkedin.com/in/anton-nyman"
+                >LinkedIn</a
+              >
+              |
+              <a href="https://github.com/antonnyman?tab=repositories"
+                >GitHub</a
+              >
+            </p>
+          </div>
+        </div>
+        <div><img src="static/me.jpg" class="me" /></div>
+      </div>
+      <div class="projects">
+        <h1>Projects</h1>
+        <div class="project-grid">
+          <div class="midas-wrapper">
+            <img src="./static/midas.png" class="project-image" />
+          </div>
+          <div>
+            <strong>Midas, the design system for Resurs Bank</strong>
+            <p>
+              Resurs Bank’s apps and sites all look and behave differently.
+              There were many legacy apps relying on old tech and outdated
+              design.
+            </p>
+            <p>
+              There was an increasing demand for design components and teams
+              were asking for stylesheets or wanted to know how I solved
+              different design tasks.
+            </p>
+            <p>
+              I set out to help the developers get started with our design
+              guidelines while also easing my workload by extracting the CSS
+              from the Merchant Portal and built the most occuring components in
+              React.
+            </p>
+            <p>
+              When I left Resurs Bank Midas had thirty components, forty utils
+              and powered three sites.
+            </p>
+          </div>
+
+          <div class="mp-wrapper">
+            <img src="./static/mp.png" width="300" />
+          </div>
+
+          <div>
+            <strong>The Merchant Portal</strong>
+            <p>
+              Retailers are growing their presence online and since Resurs
+              Bank’s core business is retail finance, there was an incentive to
+              move all future payments and transactions to one platform,
+              regardless of it being a physical or electronic purchase.
+            </p>
+            <p>
+              In this very ambitious project my role as a hybrid UX designer and
+              developer in the team was to break down the requirements into UX
+              and front-end tasks and create all the graphical components as
+              code.
+            </p>
+            <p>
+              Being able to both exploring UX tasks as well as developing
+              front-end helped the project moving in a rapid pace with quick
+              iterations.
+            </p>
+          </div>
+          <div class="cl-wrapper">
+            <img src="./static/cl.png" width="300" />
+          </div>
+          <div>
+            <strong>Consumer loan application</strong>
+            <p>
+              The increased load of confused customers calling in and the
+              tedious manual labor required for each application led Resurs Bank
+              to start a project to create a fully digital application form.
+            </p>
+            <p>
+              My role was to create the mobile first front-end in Angular 2 for
+              the new credit engine. I also did my best to sprinkle visual
+              enhancements with UX best practices.
+            </p>
+            <p>
+              The loan form for Finland and Ellos was released March and June
+              2017
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

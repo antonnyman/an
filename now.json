@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "name": "an",
+  "alias": ["an"],
+  "regions": ["bru"],
+  "builds": [
+    { "src": "site/index.html", "use": "@now/static" },
+    { "src": "site/static/**", "use": "@now/static" }
+  ],
+  "routes": [
+    { "src": "/static/(.*)", "dest": "site/static/$1" },
+    { "src": "/(.*)", "dest": "site/$1" }
+  ]
+}
