@@ -42,22 +42,29 @@
       }
 
       @font-face {
-        font-family: 'Inter';
-        src: url('./static/Inter-UI-Medium.woff') format('woff');
+        font-family: "Inter UI";
+        src: url("./static/Inter-UI-Black.woff") format("woff");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Inter UI";
+        src: url("./static/Inter-UI-Medium.woff") format("woff");
         font-weight: 600;
         font-style: normal;
       }
       @font-face {
-        font-family: 'Inter';
-        src: url('./static/Inter-UI-Regular.woff') format('woff');
-        font-weight: 400;
+        font-family: "Inter UI";
+        src: url("./static/Inter-UI-Regular.woff") format("woff");
+        font-weight: 300;
         font-style: normal;
       }
 
       body {
         margin: 0;
         padding: 0;
-        font: 14px 'Inter UI', system-ui, sans-serif;
+        font: 16px "Inter UI", system-ui, sans-serif;
         line-height: 1.5;
         font-weight: 400;
         color: #111;
@@ -80,6 +87,9 @@
         color: rgba(3, 102, 214, 1);
         text-decoration: none;
       }
+      a:hover {
+        text-decoration: underline;
+      }
       a:visited {
         color: rgba(3, 102, 214, 1);
       }
@@ -91,26 +101,49 @@
         justify-content: space-between;
       }
 
+      h1 {
+        font-weight: 700;
+        margin-bottom: 0;
+      }
+      h2 {
+        font-weight: 600;
+        margin-top: 0;
+      }
+
       .logo-wrap {
-        flex: 0 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        margin-top: 2rem;
       }
       .logo {
         display: block;
         width: 66px;
       }
       .content {
-        padding: 0 32px;
+        padding: 2rem 32px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
       }
       .intro {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap-reverse;
+        background: #fff;
+        min-width: 400px;
+        padding: .5rem 2.5rem 1.5rem 2.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.1),
+          0 10px 30px #f3ece8;
       }
+
+      .intro-content {
+        padding-right: 1rem;
+      }
+
       .me {
-        padding-top: 2rem;
+        margin-top: 2rem;
         width: 150px;
+        border-radius: 50%;
       }
       .projects {
         margin-top: 8rem;
@@ -143,7 +176,27 @@
         max-width: 300px;
         padding: 0 1rem;
       }
+
+      @media (min-width: 600px) {
+        .intro {
+          flex-wrap: nowrap;
+        }
+
+        .content {
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+        }
+
+      }
+
       @media screen and (max-width: 600px) {
+        .intro {
+          border-radius: 0;
+          box-shadow: none;
+        }
         .project-grid {
           grid-template-columns: 1fr;
         }
@@ -156,42 +209,36 @@
     </style>
   </head>
   <body>
-    <header>
+    <!-- <header>
       <div class="logo-wrap"><img src="./static/logo.svg" class="logo" /></div>
       <ul class="nav"></ul>
-    </header>
+    </header> -->
     <div class="content">
       <div class="intro">
-        <div>
-          <p>Hi, I'm Anton Nyman.</p>
-          <p>
-            I'm a javascript developer from Malmö, Sweden with a background in
-            UX design.
-          </p>
-          <p>
-            I work for
-            <a href="https://www.mdinternational.se/en/">Docly</a> (Min Doktor)
+        <div class="intro-content">
+          <h1>Anton Nyman</h1>
+          <h2>Software engineer in Malmö</h2>
+          <p>Hello hej, I'm Anton Nyman.</p>
+            I'm a Javascript developer at
+            <a href="https://www.docly.com/">Docly</a> / <a href="https://www.mindoktor.se/">Min Doktor</a>
             where we create accessible digital healthcare. Previously I've
-            worked for <a href="http://resurs.se">Resurs Bank</a> and Sony
-            Creative Center.
+            worked with <a href="http://resurs.se">Resurs Bank</a>, Sony
+            Studio Nordic and as a live streaming production freelancer.
           </p>
           <div class="contact">
             <p>
-              Get in touch<br />
-              anton@antonnyman.se <br /><a
-                href="http://www.linkedin.com/in/anton-nyman"
-                >LinkedIn</a
-              >
+              <em>Get in touch</em><br />
+              anton@antonnyman.se <br />
+              <a href="http://www.linkedin.com/in/anton-nyman">LinkedIn</a>
               |
-              <a href="https://github.com/antonnyman?tab=repositories"
-                >GitHub</a
-              >
+              <a href="https://github.com/antonnyman?tab=repositories">GitHub</a>
             </p>
           </div>
         </div>
         <div><img src="static/me.jpg" class="me" /></div>
       </div>
-      <div class="projects">
+ 
+      <!-- <div class="projects">
         <h1>Projects</h1>
         <div class="project-grid">
           <div class="midas-wrapper">
@@ -200,9 +247,8 @@
           <div>
             <strong>Midas, the design system for Resurs Bank</strong>
             <p>
-              Resurs Bank’s apps and sites all look and behave differently.
-              There were many legacy apps relying on old tech and outdated
-              design.
+              Resurs Bank’s apps and sites all look and behave differently and most
+              of them rely on outdated tech and design.
             </p>
             <p>
               There was an increasing demand for design components and teams
@@ -210,10 +256,8 @@
               different design tasks.
             </p>
             <p>
-              I set out to help the developers get started with our design
-              guidelines while also easing my workload by extracting the CSS
-              from the Merchant Portal and built the most occuring components in
-              React.
+              Together with our design lead I built and maintained the Resurs design system 
+              components and we worked together to create documentation and guidelines.
             </p>
             <p>
               When I left Resurs Bank Midas had thirty components, forty utils
@@ -228,7 +272,7 @@
           <div>
             <strong>The Merchant Portal</strong>
             <p>
-              Retailers are growing their presence online and since Resurs
+              Retailers were asking for better digital tools and since Resurs
               Bank’s core business is retail finance, there was an incentive to
               move all future payments and transactions to one platform,
               regardless of it being a physical or electronic purchase.
@@ -266,7 +310,10 @@
             </p>
           </div>
         </div>
-      </div>
+      </div> -->
+      <div class="logo-wrap"><img src="./static/logo.svg" class="logo" /></div>
+
     </div>
+
   </body>
 </html>
